@@ -1,0 +1,35 @@
+name: Honeycomb UI Auto deploy 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v2
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+
+      - name: 安装依赖 pnpm 
+        run: npm install -g pnpm
+        
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 构建应用
+        run: pnpm build
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+  
