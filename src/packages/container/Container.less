@@ -1,0 +1,36 @@
+@import url("../../root.less");
+
+.hc-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: @color-white;
+  outline: @border-default @border-color-base;
+  flex: 0 0 auto;
+  // transition: all .25s;
+}
+
+.hc-container__resize {
+  cursor: se-resize;
+  position: absolute;
+  background-color: @border-color-lighter;
+  width: 8px;
+  height: 8px;
+  bottom: 0;
+  right: 0;
+  transition: all .25s;
+}
+.hc-container__resize:hover {
+  background-color: fade(@color-primary, 35%);
+}
+.hc-container__resize.isMouseDown {
+  background-color: @color-primary;
+}
+.is-horizontal .hc-container__resize {
+  cursor: ew-resize;
+  height: 100%;
+}
+.is-vertical .hc-container__resize {
+  cursor: ns-resize;
+  width: 100%;
+}

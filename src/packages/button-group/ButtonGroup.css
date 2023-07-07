@@ -1,0 +1,30 @@
+.el-button-group::after {
+    clear: both;
+}
+.hc-button-group::before,
+.hc-button-group::after {
+    display: table;
+    content: "";
+}
+.hc-button-group>.hc-button:not(:last-child):not(:first-child) {
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.hc-button-group>.hc-button:not(:last-child) {
+  border-right-color: var(--color-white);
+}
+.hc-button-group>.hc-button.hc-button:not(:first-child) {
+  margin-left: -1px;
+}
+.hc-button-group>.hc-button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.hc-button-group>.hc-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.hc-button-group {
+  display: flex;
+}
