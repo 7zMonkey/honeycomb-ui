@@ -2,7 +2,7 @@ name: Honeycomb UI Auto deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
