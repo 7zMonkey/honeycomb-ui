@@ -54,6 +54,8 @@
       isMouseDown = false
       onResizeMouseMove = null
       document.documentElement.style.cursor = 'auto'
+      document.documentElement.style.userSelect = 'auto'
+      return
     }
     if (e.buttons === 1 && isMouseDown) {
       const { clientX, clientY } = e;
@@ -93,6 +95,7 @@
         }
         window.localStorage.setItem('containerStorage', JSON.stringify(storage))
       }
+      document.documentElement.style.userSelect = 'none'
       if (resize !== 'vertical' && resize !== 'horizontal') {
         // 修改 body 的 cursor\
         document.documentElement.style.cursor = 'nwse-resize'
