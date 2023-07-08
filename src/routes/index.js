@@ -5,7 +5,10 @@ const routes = {
   }),
   '/container': wrap({
     asyncComponent: () => import('../examples/container.svelte')
-}),
+  }),
+  '/menu': wrap({
+    asyncComponent: () => import('../examples/menu.svelte')
+  }),
 }
 
 export { routes }
