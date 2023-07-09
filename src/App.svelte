@@ -10,9 +10,10 @@ let menuData = [
   { type: 'title', lable: '组件' },
   { lable: 'button', id: '/button', onClick: (url) => push(url) },
   { lable: 'container', id: '/container', onClick: (url) => push(url) },
+  { lable: 'icon', id: '/icon', onClick: (url) => push(url) },
   { type: 'line' },
   { lable: 'menu', id: '/menu', onClick: (url) => push(url) },
-  { lable: 'menu-list', id: '/menulist', onClick: (url) => push(url) }
+  { lable: 'menu-list', id: '/menulist', onClick: (url) => push(url) },
 ] 
 
 const menuClick = (url) => push(url)

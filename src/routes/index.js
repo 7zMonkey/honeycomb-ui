@@ -12,6 +12,9 @@ const routes = {
   '/menulist': wrap({
     asyncComponent: () => import('../examples/menulist.svelte')
   }),
+  '/icon': wrap({
+    asyncComponent: () => import('../examples/icon.svelte')
+  }),
 }
 
 export { routes }
