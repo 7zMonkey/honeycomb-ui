@@ -69,26 +69,25 @@
 .hc-menu-list__sub-menu-title {
   position: relative;
 }
-.hc-menu-list__sub-menu-title::after {
+.hc-menu-list__sub-menu-icon {
   position: absolute;
-  content: '>';
   display: inline-block;
   line-height: 40px;
-  top: 0;
+  top: 11px;
   right: 8px;
 }
 .hc-menu-list__sub-menu-content {
+  background: #FFFFFF;
   display: none;
   border: @border-default @border-color-base;
   position: absolute;
   min-width: 200px;
-  overflow: hidden;
   top: 0;
   right: -200px;
 }
-.hc-menu-list__sub-menu:hover .hc-menu-list__sub-menu-title {
+.hc-menu-list__sub-menu:hover > .hc-menu-list__sub-menu-title {
   color: @color-primary;
 }
-.hc-menu-list__sub-menu:hover .hc-menu-list__sub-menu-content {
+.hc-menu-list__sub-menu:hover > .hc-menu-list__sub-menu-content {
   display: block;
 }

@@ -19,7 +19,7 @@
       type: 'line',
       lable: '分割线'    
     },
-    {
+        {
       id: '2',
       type: 'item',
       lable: '菜单项2',
@@ -54,8 +54,9 @@
       type: 'line',
     },
     {
+      id: 'submenu-1',
       type: 'submenu',
-      lable: '子菜单',
+      lable: '子菜单1',
       children: [
         {
           id: '5',
@@ -72,6 +73,59 @@
           onClick: () => {
             console.log('菜单项6')
           }
+        },
+        {
+          type: 'line',
+        },
+        {
+          id: 'submenu-2',
+          type: 'submenu',
+          lable: '子菜单2',
+          children: [
+            {
+              id: '7',
+              type: 'item',
+              lable: '菜单项7',
+              onClick: () => {
+                console.log('菜单项7')
+              }
+            },
+            {
+              id: '8',
+              type: 'item',
+              lable: '菜单项8',
+              onClick: () => {
+                console.log('菜单项8')
+              }
+            },
+            {
+              type: 'line',
+              lable: '分割线'    
+            },
+            {  
+              id: 'submenu-3',
+              type: 'submenu',
+              lable: '子菜单3',
+              children: [
+                {
+                  id: '9',
+                  type: 'item',
+                  lable: '菜单项9',
+                  onClick: () => {
+                    console.log('菜单项9')
+                  }
+                },
+                {
+                  id: '10',
+                  type: 'item',
+                  lable: '菜单项10',
+                  onClick: () => {
+                    console.log('菜单项10')
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

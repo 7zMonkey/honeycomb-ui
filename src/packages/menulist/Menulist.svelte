@@ -1,9 +1,8 @@
 <script>
-// @ts-nocheck
-
   import { createEventDispatcher } from 'svelte';
   import './Menulist.less';
   import MenuList from './Menulist.svelte';
+  import Icon from '../icon/Icon.svelte';
 
   const change = createEventDispatcher();
   const classNames = ['hc-menu-list']
@@ -20,6 +19,24 @@
     change(value)
   }
   const onKeydown = () => {}
+  const hasChildWithValue = (item, value) => {
+  console.log(item, value, !value)
+  if (!value) {
+    return false;
+  }
+  if (item.children) {
+    if (item.children.some(v => v.id === value)) {
+      return true;
+    } else {
+      for (let i = 0; i < item.children.length; i++) {
+        if (hasChildWithValue(item.children[i], value)) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
 </script>
 
 <div class={className}>
@@ -49,7 +66,7 @@
         {item.lable||''}
       </div>
     {/if}
-    
+
     {#if item.type === 'group'}
       <div class="hc-menu-list__group" data-id={item.id || index}>
         <div class="hc-menu-list__group-title">
@@ -63,8 +80,10 @@
 
     {#if item.type === 'submenu'}
       <div class="hc-menu-list__sub-menu" data-id={item.id || index}>
-        <div class="hc-menu-list__sub-menu-title" class:active={item.children.some((v) => v.id === value)}>
+        <!-- active向下遍历所有 -->
+        <div class="hc-menu-list__sub-menu-title" class:active={hasChildWithValue(item, value)}>
           { item.lable }
+          <Icon className="hc-menu-list__sub-menu-icon" name="chevron-right"></Icon>
         </div>
         <div class="hc-menu-list__sub-menu-content" data-id={item.id || index}>
           <MenuList data={item.children} bind:value={value}></MenuList>
