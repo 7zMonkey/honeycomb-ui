@@ -9,6 +9,9 @@ const routes = {
   '/menu': wrap({
     asyncComponent: () => import('../examples/menu.svelte')
   }),
+  '/menulist': wrap({
+    asyncComponent: () => import('../examples/menulist.svelte')
+  }),
 }
 
 export { routes }

@@ -1,27 +1,26 @@
 <script>
-
 import Router from 'svelte-spa-router'
 import {routes} from './routes'
-import {link} from 'svelte-spa-router'
+import {link, push} from 'svelte-spa-router'
 import Button from './packages/button/Button.svelte'
 import Container from './packages/container/Container.svelte';
+import MenuList from './packages/menulist/Menulist.svelte';
 
-let links = [
-  { lable: 'button', path: '/button' },
-  { lable: 'container', path: '/container'},
-  { lable: 'menu', path: '/menu'}
+let menuData = [
+  { type: 'title', lable: '组件' },
+  { lable: 'button', id: '/button', onClick: (url) => push(url) },
+  { lable: 'container', id: '/container', onClick: (url) => push(url) },
+  { type: 'line' },
+  { lable: 'menu', id: '/menu', onClick: (url) => push(url) },
+  { lable: 'menu-list', id: '/menulist', onClick: (url) => push(url) }
 ] 
+
+const menuClick = (url) => push(url)
 </script>
 
 <div class="page">
-  <Container width="400px" height="100vh" maxWidth={800} resize="horizontal" key="section" storage>
-    <section class="links">
-      {#each links as item}
-        <a class="link" href={item.path} use:link>
-          <Button round plain>{item.lable}</Button>
-        </a>
-      {/each}
-    </section>
+  <Container width="300px" height="100vh" maxWidth={440} resize="horizontal" key="section" storage>
+    <MenuList data={menuData}></MenuList>
   </Container>
   <div class="container">
     <div class="main-container">
