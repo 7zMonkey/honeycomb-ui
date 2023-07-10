@@ -8,7 +8,8 @@
   export let disabled = false
   export let loading = false
   export let plain = false
-  export let round = false
+  export let round = true
+  export let corner = false
   export let circle = false
   export let icon = ''
   export let autofocus = false
@@ -36,6 +37,10 @@
   if (percentage>0) {
     classNames.push('is-percentage')
     loading = true
+  }
+
+  if (corner) {
+    round = false
   }
 
   if (loading) {
