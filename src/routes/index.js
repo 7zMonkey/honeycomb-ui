@@ -15,6 +15,9 @@ const routes = {
   '/icon': wrap({
     asyncComponent: () => import('../examples/icon.svelte')
   }),
+  '/message': wrap({
+    asyncComponent: () => import('../examples/message.svelte')
+  }),
 }
 
 export { routes }

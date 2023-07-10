@@ -8,20 +8,27 @@ import MenuList from './packages/menulist/Menulist.svelte';
 
 let menuData = [
   { type: 'title', lable: '组件' },
-  { lable: 'button', id: '/button', onClick: (url) => push(url) },
-  { lable: 'container', id: '/container', onClick: (url) => push(url) },
-  { lable: 'icon', id: '/icon', onClick: (url) => push(url) },
+  { type: 'group', lable: 'Basic', children: [
+    { lable: 'button', id: '/button' },
+    { lable: 'container', id: '/container' },
+    { lable: 'icon', id: '/icon' },
+  ]},
   { type: 'line' },
-  { lable: 'menu', id: '/menu', onClick: (url) => push(url) },
-  { lable: 'menu-list', id: '/menulist', onClick: (url) => push(url) },
+  { lable: 'menu', id: '/menu' },
+  { lable: 'menu-list', id: '/menulist' },
+  { type: 'group', lable: 'Basic', children: [
+    { lable: 'message', id: '/message' },
+  ]}
 ] 
 
-const menuClick = (url) => push(url)
+const menuClick = (value) => {
+  push(value.detail.id)
+}
 </script>
 
 <div class="page">
   <Container width="300px" height="100vh" maxWidth={440} resize="horizontal" key="section" storage>
-    <MenuList data={menuData}></MenuList>
+    <MenuList data={menuData} on:change={menuClick}></MenuList>
   </Container>
   <div class="container">
     <div class="main-container">

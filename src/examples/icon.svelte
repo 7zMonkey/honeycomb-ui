@@ -4,12 +4,21 @@ import Icon from "../packages/icon/Icon.svelte";
 import FontaObj from "bootstrap-icons/font/bootstrap-icons.json";
 
 const FontaObjKeys = Object.keys(FontaObj);
+const onCopy = (text) => {
+  // debugger
+  let textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+}
 </script>
 
 <main>
   <div class="icon-list">
     {#each FontaObjKeys as key}
-    <div id={key} class="icon-item">
+    <div id={key} class="icon-item" on:click={v => onCopy(key)}>
       <div class="icon-container">
         <Icon name={key} size="24px" />
       </div>
@@ -22,7 +31,6 @@ const FontaObjKeys = Object.keys(FontaObj);
   main {
     padding: 20px;
     background-color: #fff;
-    display: flex;
   }
 
   .icon-list {
