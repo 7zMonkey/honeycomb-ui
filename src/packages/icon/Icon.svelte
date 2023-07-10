@@ -1,30 +1,32 @@
 <script>
   import "./icon.less"
-  let classNames = ['hc-icon'];
-  export let className = '';
+  let className = '';
   export let name = '';
   export let size = '';
   export let color = '';
   export let style = '';
   const styleArray = [];
 
-  classNames.push(className);
+  $: {
+    let classNames = ['hc-icon'];
 
-  if (name) {
-    classNames.push(`bi-${name}`)
-  }
-  if (size) {
-    styleArray.push(`font-size: ${size}`)
-  }
-  if (color) {
-    styleArray.push(`color: ${color}`)
-  }
-  if (style) {
-    styleArray.push(style)
-  }
-  style = styleArray.join(';')
+    if (name) {
+      classNames.push(`bi-${name}`)
+    }
+    if (size) {
+      styleArray.push(`font-size: ${size}`)
+    }
+    if (color) {
+      styleArray.push(`color: ${color}`)
+    }
+    if (style) {
+      styleArray.push(style)
+    }
+    style = styleArray.join(';')
 
-  className = classNames.join(' ')
+
+    className = classNames.join(' ')
+    console.log('className:', className)
+  }
 </script>
-
 <i class={className} {style}></i>

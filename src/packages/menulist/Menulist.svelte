@@ -1,10 +1,14 @@
 <script>
+  /**
+ * 这是一个简单的Svelte组件
+ * @component
+ */
   import { createEventDispatcher } from 'svelte';
   import './Menulist.less';
   import MenuList from './Menulist.svelte';
   import Icon from '../icon/Icon.svelte';
 
-  const change = createEventDispatcher();
+  const dispatch = createEventDispatcher();
   const classNames = ['hc-menu-list']
   export let data = []
   export let value;
@@ -16,11 +20,10 @@
     }
   }
   $: if (value) {
-    change(value)
+    dispatch('change', { id: value })
   }
   const onKeydown = () => {}
   const hasChildWithValue = (item, value) => {
-  console.log(item, value, !value)
   if (!value) {
     return false;
   }

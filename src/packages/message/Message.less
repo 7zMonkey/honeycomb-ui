@@ -1,0 +1,55 @@
+@import url(../../root.less);
+.hc-message-list {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hc-message {
+  width: max-content;
+  display: flex;
+  padding: 8px 16px;
+  margin-bottom: 12px;
+  border: @border-default @border-color-base;
+  border-radius: @border-radius-base;
+  justify-content: center;
+  align-items: center;
+}
+.hc-message .hc-message__icon {
+  font-size: 20px;
+  line-height: 24px;
+  margin-right: 8px;
+}
+.hc-message .hc-message__inner {
+  font-size: 16px;
+  line-height: 24px;
+  flex: 1;
+}
+.hc-message--primary {
+  background-color: fadeout(@color-primary, 44%);
+  color: @color-primary;
+  border-color: @color-primary;
+}
+.hc-message--success {
+  background-color: fadeout(@color-success, 90%);
+  color: @color-success;
+  border-color: darken(@color-success, 10%);
+}
+.hc-message--error {
+  background-color: fadeout(@color-danger, 90%);
+  color: @color-danger;
+  border-color: darken(@color-danger, 10%);
+}
+.hc-message--warning {
+  background-color: fadeout(@color-warning, 90%);
+  color: @color-warning;
+  border-color: darken(@color-warning, 10%);
+}
+.hc-message--info {
+  background-color: fadeout(@color-info, 90%);
+  color: @color-info;
+  border-color: darken(@color-info, 10%);
+}
