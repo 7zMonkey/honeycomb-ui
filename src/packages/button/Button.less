@@ -48,28 +48,23 @@
   color: @color-white;
 }
 
-.hc-button.hc-button--primary:not(.is-disabled):not(.is-plain):hover,
-.hc-button.hc-button--primary:not(.is-disabled):not(.is-plain):focus {
+.hc-button.hc-button--primary:not(.is-disabled):not(.is-plain):hover {
   background-color: fade(@color-primary, 35%);
 }
 
-.hc-button.hc-button--success:not(.is-disabled):not(.is-plain):hover,
-.hc-button.hc-button--success:not(.is-disabled):not(.is-plain):focus {
+.hc-button.hc-button--success:not(.is-disabled):not(.is-plain):hover {
   background-color: fade(@color-success, 35%);
 }
 
-.hc-button.hc-button--info:not(.is-disabled):not(.is-plain):hover,
-.hc-button.hc-button--info:not(.is-disabled):not(.is-plain):focus {
+.hc-button.hc-button--info:not(.is-disabled):not(.is-plain):hover {
   background-color: fade(@color-info, 35%);
 }
 
-.hc-button.hc-button--warning:not(.is-disabled):not(.is-plain):hover,
-.hc-button.hc-button--warning:not(.is-disabled):not(.is-plain):focus {
+.hc-button.hc-button--warning:not(.is-disabled):not(.is-plain):hover {
   background-color: fade(@color-warning, 35%);
 }
 
-.hc-button.hc-button--danger:not(.is-disabled):not(.is-plain):hover,
-.hc-button.hc-button--danger:not(.is-disabled):not(.is-plain):focus {
+.hc-button.hc-button--danger:not(.is-disabled):not(.is-plain):hover {
   background-color: fade(@color-danger, 35%);
 }
 
@@ -79,33 +74,41 @@
   border-color: @color-primary;
   color: @color-white;
 }
-
-.hc-button.hc-button--primary:not(.is-disabled):active {
+.hc-button.hc-button--default:not(.is-disabled):active {
   background-color: desaturate(@color-primary, 50%);
+  border-color: desaturate(@color-primary, 50%);
+}
+.hc-button.hc-button.hc-button--primary:not(.is-disabled):active {
+  background-color: desaturate(@color-primary, 50%);
+  border-color: desaturate(@color-primary, 50%);
 }
 
-.hc-button.hc-button--success:not(.is-disabled):active {
+.hc-button.hc-button.hc-button--success:not(.is-disabled):active {
   background-color: desaturate(@color-success, 50%);
+  border-color: desaturate(@color-success, 50%);
 }
 
-.hc-button.hc-button--info:not(.is-disabled):active {
+.hc-button.hc-button.hc-button--info:not(.is-disabled):active {
   background-color: desaturate(@color-info, 50%);
+  border-color: desaturate(@color-info, 50%);
 }
 
-.hc-button.hc-button--warning:not(.is-disabled):active {
+.hc-button.hc-button.hc-button--warning:not(.is-disabled):active {
   background-color: desaturate(@color-warning, 50%);
+  border-color: desaturate(@color-warning, 50%);
 }
 
-.hc-button.hc-button--danger:not(.is-disabled):active {
+.hc-button.hc-button.hc-button--danger:not(.is-disabled):active {
   background-color: desaturate(@color-danger, 50%);
+  border-color: desaturate(@color-danger, 50%);
 }
 
 .hc-button:not(.is-disabled):focus-visible {
   outline: 2px @color-primary solid;
 }
-.hc-button:not(.is-disabled):focus-visible span {
-  transform: scale(3);
-}
+// .hc-button:not(.is-disabled):focus-visible span {
+//   transform: scale(3);
+// }
 .hc-button.is-round {
   border-radius: @border-radius;
 }
@@ -125,6 +128,10 @@
   background: @color-white;
   color: @color-primary;
   border-color: @color-primary;
+}
+.hc-button.is-plain.hc-button--info:not(.is-disabled):active {
+  background-color: fade(@color-info, 35%);
+  border-color: fade(@color-info, 35%);
 }
 .hc-button.is-disabled {
   opacity: 0.6;
@@ -200,9 +207,6 @@
 
 .hc-button.is-loading.is-percentage > .hc-button__percentage {
   animation: none;
-}
-.hc-button.is-mark {
-  
 }
 .hc-button.is-mark .hc-button__mark {
   position: absolute;

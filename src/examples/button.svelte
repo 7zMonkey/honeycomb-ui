@@ -22,12 +22,12 @@
     </div>
   
     <div class="button">
-      <Button round>按钮</Button>
-      <Button round type="primary">按钮</Button>
-      <Button round type="success">按钮</Button>
-      <Button round type="info">按钮</Button>
-      <Button round type="warning">按钮</Button>
-      <Button round type="danger">按钮</Button>
+      <Button corner>按钮</Button>
+      <Button corner type="primary">按钮</Button>
+      <Button corner type="success">按钮</Button>
+      <Button corner type="info">按钮</Button>
+      <Button corner type="warning">按钮</Button>
+      <Button corner type="danger">按钮</Button>
     </div>
   
     <div class="button">
